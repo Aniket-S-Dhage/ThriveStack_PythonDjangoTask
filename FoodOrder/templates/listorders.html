@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+     <title>List All Order</title>
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid w-75 mx-auto m-5 p-3">
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th>Sr no</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Order Date</th>
+                <th>Order updated Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in orders %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.title}}</td>
+                    <td>{{i.description}}</td>
+                    <td>{{i.completed}}</td>
+                    <td>{{i.created_at}}</td>
+                    <td>{{i.updated_at}}</td>
+                    <td>
+                        <button class="btn btn-warning me-4">Update</button>
+                        <button class="btn btn-danger">Delete</button>
+
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table></div>
+{% endblock %}

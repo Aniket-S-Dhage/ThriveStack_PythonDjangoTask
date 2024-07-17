@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <title>Add Order</title>
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button class="btn btn-success" type="submit">Add Order</button>
+        </form>
+    </div>
+{% endblock %}
+
