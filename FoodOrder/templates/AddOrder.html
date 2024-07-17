@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block title %}
     <title>Add Order</title>
@@ -10,7 +10,7 @@
     <div>
         <form method="post">
             {% csrf_token %}
-            {{form}}
+            {{form | crispy}}
             <button class="btn btn-success" type="submit">Add Order</button>
         </form>
     </div>
